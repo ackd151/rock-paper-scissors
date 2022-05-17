@@ -1,14 +1,10 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { useState } from "react";
+import BaseGame from "./components/BaseGame";
+import "./styles/App.css";
 
 function App() {
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-      </header>
-    </div>
-  );
+  const [isBaseGame, setIsBaseGame] = useState(true);
+  return <div className='page'>{isBaseGame && <BaseGame />}</div>;
 }
 
 export default App;
