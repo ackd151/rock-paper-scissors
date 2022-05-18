@@ -1,10 +1,14 @@
 import { useState } from "react";
-import BaseGame from "./components/BaseGame";
+import Game from "./components/Game";
 import "./styles/App.css";
 
 function App() {
   const [isBaseGame, setIsBaseGame] = useState(true);
-  return <div className='page'>{isBaseGame && <BaseGame />}</div>;
+  return (
+    <div className='page'>
+      <Game base={isBaseGame} />
+    </div>
+  );
 }
 
 export default App;

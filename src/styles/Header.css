@@ -9,24 +9,25 @@
   text-transform: uppercase;
 }
 
-.title {
-  font-size: 2rem;
-  line-height: 1.7rem;
-  color: var(--color-white);
+.logo {
+  height: var(--logo-height);
 }
 
 .score-card {
   display: flex;
   flex-direction: column;
+  height: var(--logo-height);
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-white);
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 2.5rem;
   border-radius: 0.5rem;
 }
 .score-label {
   color: var(--color-text-score);
 }
 .score {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  line-height: 2.8rem;
+  line-height: 3.5rem;
 }
