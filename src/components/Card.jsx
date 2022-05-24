@@ -9,7 +9,7 @@ import spock from "../assets/icon-spock.svg";
 
 import "../styles/Card.css";
 
-const Card = ({ card }) => {
+const Card = ({ card, className }) => {
   const icons = {
     rock: rock,
     paper: paper,
@@ -19,8 +19,10 @@ const Card = ({ card }) => {
   };
 
   return (
-    <div className='card'>
-      <img src={icons[card]} alt={card} />
+    <div className={`card-wrap ${className ? className : ""}`}>
+      <div className={`card ${card}`}>
+        <img src={icons[card]} alt={card} className='card-inset' />
+      </div>
     </div>
   );
 };

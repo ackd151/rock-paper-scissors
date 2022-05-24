@@ -14,9 +14,13 @@ const Board = ({ base }) => {
       className={`board ${base ? "base-board" : "enhanced-board"}`}
       style={backgroundStyle}
     >
-      <Card card='paper' />
-      <Card card='scissors' />
-      <Card card='rock' />
+      <div className='top-row'>
+        <Card card='paper' />
+        <Card card='scissors' />
+      </div>
+      <div className='bottom-row'>
+        <Card card='rock' className='span2' />
+      </div>
       {!base && <Card card='lizard' />}
       {!base && <Card card='spock' />}
     </div>

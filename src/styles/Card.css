@@ -1,0 +1,37 @@
+.card-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border-radius: 50%;
+  padding: 2rem;
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-inset {
+  padding: 3rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  box-shadow: inset 0 0.33rem var(--color-shadow-inset);
+}
+
+.rock {
+  background: var(--color-rock);
+  box-shadow: 0 0.33rem 0 var(--color-shadow-rock);
+}
+.paper {
+  background: var(--color-paper);
+  box-shadow: 0 0.33rem 0 var(--color-shadow-paper);
+}
+.scissors {
+  background: var(--color-scissors);
+  box-shadow: 0 0.33rem 0 var(--color-shadow-scissors);
+}
