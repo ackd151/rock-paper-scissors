@@ -9,7 +9,7 @@ import spock from "../assets/icon-spock.svg";
 
 import "../styles/Card.css";
 
-const Card = ({ card, className }) => {
+const Card = ({ card, playCard }) => {
   const icons = {
     rock: rock,
     paper: paper,
@@ -17,9 +17,14 @@ const Card = ({ card, className }) => {
     lizard: lizard,
     spock: spock,
   };
+  const cardInt = {
+    rock: 0,
+    paper: 1,
+    scissors: 2,
+  };
 
   return (
-    <div className={`card-wrap ${className ? className : ""}`}>
+    <div className='card-wrap' onClick={() => playCard(cardInt[card])}>
       <div className={`card ${card}`}>
         <img src={icons[card]} alt={card} className='card-inset' />
       </div>

@@ -4,7 +4,7 @@ import triangleBg from "../assets/bg-triangle.svg";
 import Card from "./Card";
 import "../styles/Board.css";
 
-const Board = ({ base }) => {
+const Board = ({ base, playCard }) => {
   const backgroundStyle = {
     backgroundImage: `url(${base ? triangleBg : pentagonBg})`,
   };
@@ -15,11 +15,11 @@ const Board = ({ base }) => {
       style={backgroundStyle}
     >
       <div className='top-row'>
-        <Card card='paper' />
-        <Card card='scissors' />
+        <Card card='paper' playCard={playCard} />
+        <Card card='scissors' playCard={playCard} />
       </div>
       <div className='bottom-row'>
-        <Card card='rock' className='span2' />
+        <Card card='rock' playCard={playCard} />
       </div>
       {!base && <Card card='lizard' />}
       {!base && <Card card='spock' />}
