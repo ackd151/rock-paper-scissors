@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Board from "./Board";
+import Result from "./Result";
 import "../styles/Game.css";
 
 const Game = ({ base }) => {
   const [score, setScore] = useState(0);
+  const [result, setResult] = useState(false);
+  const [playerCard, setPlayerCard] = useState("");
+  const [aiCard, setAiCard] = useState("");
+  const [outcome, setOutcome] = useState(0);
 
   const cards = base
     ? ["rock", "paper", "scissors"]
@@ -21,19 +26,27 @@ const Game = ({ base }) => {
   ];
 
   const handlePlayedCard = (card) => {
+    setPlayerCard(cards[card]);
     const compCard = generateComputerCard();
-    console.log("Played: ", card);
-    console.log(scores[card]);
-    console.log(scores[compCard]);
-    // console.log(roundScore);
-    console.log(scores[card][compCard]);
-    setScore((prev) => prev + scores[card][compCard]);
+    setAiCard(cards[compCard]);
+    setOutcome(scores[card][compCard]);
+    setScore((prev) => prev + outcome);
+    setResult(true);
   };
 
   return (
     <div className='app'>
       <Header score={score} />
-      <Board base={base} playCard={handlePlayedCard} />
+      {(result && (
+        <Result
+          playerCard={playerCard}
+          aiCard={aiCard}
+          outcome={outcome}
+          playAgain={() => {
+            setResult(false);
+          }}
+        />
+      )) || <Board base={base} playCard={handlePlayedCard} />}
     </div>
   );
 };
